@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "dungeonsport:backstabber"
+  },
+  "addition": {
+    "item": "minecraft:sugar"
+  },
+  "result": {
+    "id": "dungeonsport:swift_striker"
+  }
+}

@@ -4,5 +4,9 @@
     "item.dungeonsport.example_block_item": "Example Block Item",
     "item.dungeonsport.anchor": "Anchor",
     "item.dungeonsport.encrusted_anchor": "Encrusted Anchor",
-    "item.dungeonsport.blacksmith_upgrade": "Blacksmith Upgrade Template"
+    "item.dungeonsport.blacksmith_upgrade": "Blacksmith Upgrade Template",
+    "item.dungeonsport.firebrand": "Firebrand",
+    "item.dungeonsport.highland_axe": "Highland Axe",
+    "item.dungeonsport.backstabber": "Backstabber",
+    "item.dungeonsport.swift_striker": "Swift Striker"
 }
