@@ -66,6 +66,26 @@ public final class DPItems {
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	70f, 0.3f, 0.5f))
     ); // + fast and furious, small explosion on hit
+    public static final Item DAGGER = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
+    ); // + speezy 2
+    public static final Item FANGS_OF_FROST = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
+    ); // + speezy 2, freezing 1 for 5 seconds on hit
+    public static final Item MOON_DAGGER = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
+    ); // + speezy 2, should be soul bonus damage, but not implemented yet. smite 1 instead for now
+    public static final Item SHEER_DAGGER = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
+    ); // + speezy 2, sweeping edge on killing blow
     
     private DPItems() {
     }
@@ -73,39 +93,48 @@ public final class DPItems {
     public static void register(RegisterEvent event) {
         event.register(Registries.ITEM, registry -> {
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "example_block"),
-                    EXAMPLE_BLOCK_ITEM);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "example_block"),
+                EXAMPLE_BLOCK_ITEM);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "example_item"),
-                    EXAMPLE_ITEM);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "example_item"),
+                EXAMPLE_ITEM);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "blacksmith_upgrade"),
-                    BLACKSMITH_UPGRADE
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "blacksmith_upgrade"),
+                BLACKSMITH_UPGRADE
             );
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "anchor"),
-                    ANCHOR);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "anchor"),
+                ANCHOR);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "encrusted_anchor"),
-                    ENCRUSTED_ANCHOR);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "encrusted_anchor"),
+                ENCRUSTED_ANCHOR);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "firebrand"),
-                    FIREBRAND);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "firebrand"),
+                FIREBRAND);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "highland_axe"),
-                    HIGHLAND_AXE);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "highland_axe"),
+                HIGHLAND_AXE);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "backstabber"),
-                    BACKSTABBER);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "backstabber"),
+                BACKSTABBER);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "swift_striker"),
-                    SWIFT_STRIKER);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "swift_striker"),
+                SWIFT_STRIKER);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff"),
-                    BATTLESTAFF);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff"),
+                BATTLESTAFF);
             registry.register(
-                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff_of_terror"),
-                    BATTLESTAFF_OF_TERROR);
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff_of_terror"),
+                BATTLESTAFF_OF_TERROR);
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "fangs_of_frost"),
+                FANGS_OF_FROST);
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "moon_dagger"),
+                MOON_DAGGER);
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "sheer_dagger"),
+                SHEER_DAGGER);
         });
     }
 }

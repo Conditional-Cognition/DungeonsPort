@@ -14,5 +14,11 @@
     "item.dungeonsport.battlestaff": "Battlestaff",
     "item.dungeonsport.battlestaff_of_terror": "Battlestaff of Terror",
 
-    "enchantment.dungeonsport.echo": "Echo"
+    "enchantment.dungeonsport.echo": "Echo",
+    "enchantment.dungeonsport.exploding": "Exploding",
+    "enchantment.dungeonsport.poison_aspect": "Poison Aspect",
+    "enchantment.dungeonsport.ambush": "Ambush",
+    "enchantment.dungeonsport.freezing": "Freezing",
+
+    "effect.dungeonsport.freezing": "Freezing"
 }
