@@ -127,6 +127,9 @@ public final class DPItems {
                 ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff_of_terror"),
                 BATTLESTAFF_OF_TERROR);
             registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "dagger"),
+                DAGGER);
+            registry.register(
                 ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "fangs_of_frost"),
                 FANGS_OF_FROST);
             registry.register(

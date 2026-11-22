@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:enchantment",
-    "pools": [
-        {
-        "rolls": 1,
-        "entries": [
-            {
-            "type": "minecraft:enchantment",
-            "name": "dungeonsport:ambush",
-            "functions": [
-                {
-                "function": "minecraft:set_count",
-                "count": 1
-                }
-            ]
-            }
-        ]
-        }
-    ]
+  "description": {
+    "translate": "enchantment.dungeonsport.ambush"
+  },
+  "supported_items": "#minecraft:enchantable/weapon",
+  "weight": 5,
+  "max_level": 3,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ]
 }
