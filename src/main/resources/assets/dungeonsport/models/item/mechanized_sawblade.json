@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dungeonsport:item/mechanized_sawblade"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "dungeonsport:using_sawblade": 1
+      },
+      "model": "dungeonsport:item/mechanized_sawblade_positioning"
+    }
+  ]
+}

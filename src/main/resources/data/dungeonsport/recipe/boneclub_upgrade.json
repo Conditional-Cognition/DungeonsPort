@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "dungeonsport:boneclub"
+  },
+  "addition": {
+    "item": "minecraft:bone_block"
+  },
+  "result": {
+    "id": "dungeonsport:bone_cudgel"
+  }
+}

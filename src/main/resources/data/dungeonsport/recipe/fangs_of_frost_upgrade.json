@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "dungeonsport:dagger"
+  },
+  "addition": {
+    "item": "minecraft:blue_ice"
+  },
+  "result": {
+    "id": "dungeonsport:fangs_of_frost"
+  }
+}

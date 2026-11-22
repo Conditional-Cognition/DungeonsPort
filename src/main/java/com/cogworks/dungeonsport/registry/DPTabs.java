@@ -17,7 +17,22 @@ public final class DPTabs {
                 output.accept(DPItems.EXAMPLE_BLOCK_ITEM);
                 output.accept(DPItems.EXAMPLE_ITEM);
                 output.accept(DPItems.ANCHOR);
+                output.accept(DPItems.ENCRUSTED_ANCHOR);
                 output.accept(DPItems.BLACKSMITH_UPGRADE);
+                output.accept(DPItems.FIREBRAND);
+                output.accept(DPItems.HIGHLAND_AXE);
+                output.accept(DPItems.BACKSTABBER);
+                output.accept(DPItems.SWIFT_STRIKER);
+                output.accept(DPItems.BATTLESTAFF);
+                output.accept(DPItems.BATTLESTAFF_OF_TERROR);
+                output.accept(DPItems.BONECLUB);
+                output.accept(DPItems.BONE_CUDGEL);
+                output.accept(DPItems.BROKEN_SAWBLADE);
+                output.accept(DPItems.MECHANIZED_SAWBLADE);
+                output.accept(DPItems.DAGGER);
+                output.accept(DPItems.FANGS_OF_FROST);
+                output.accept(DPItems.MOON_DAGGER);
+                output.accept(DPItems.SHEER_DAGGER);
             })
             .build();
 

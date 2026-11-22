@@ -1,0 +1,55 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:using_item",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "dungeonsport:item/mechanized_sawblade_positioning"
+    },
+    "on_false": {
+      "type": "minecraft:select",
+      "property": "minecraft:display_context",
+      "cases": [
+        {
+          "when": "gui",
+          "model": {
+            "type": "minecraft:model",
+            "model": "dungeonsport:item/mechanized_sawblade"
+          }
+        },
+        {
+          "when": "firstperson_righthand",
+          "model": {
+            "type": "minecraft:model",
+            "model": "dungeonsport:item/mechanized_sawblade"
+          }
+        },
+        {
+          "when": "firstperson_lefthand",
+          "model": {
+            "type": "minecraft:model",
+            "model": "dungeonsport:item/mechanized_sawblade"
+          }
+        },
+        {
+          "when": "thirdperson_righthand",
+          "model": {
+            "type": "minecraft:model",
+            "model": "dungeonsport:item/mechanized_sawblade"
+          }
+        },
+        {
+          "when": "thirdperson_lefthand",
+          "model": {
+            "type": "minecraft:model",
+            "model": "dungeonsport:item/mechanized_sawblade"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "dungeonsport:item/mechanized_sawblade"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "minecraft:shears"
+  },
+  "addition": {
+    "item": "dungeonsport:dagger"
+  },
+  "result": {
+    "id": "dungeonsport:sheer_dagger"
+  }
+}

@@ -19,6 +19,7 @@ public class DungeonsPort {
         modEventBus.addListener(DPItems::register);
         modEventBus.addListener(DPTabs::register);
 
+        DPAttachments.register(modEventBus);
         DPEffects.register(modEventBus);
     }
 }

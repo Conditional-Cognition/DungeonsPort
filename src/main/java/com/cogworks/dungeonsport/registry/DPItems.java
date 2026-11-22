@@ -1,9 +1,12 @@
 package com.cogworks.dungeonsport.registry;
 
 import com.cogworks.dungeonsport.DungeonsPort;
+import com.cogworks.dungeonsport.items.SawbladeItem;
 import com.cogworks.dungeonsport.math_and_helpers.scaledWeaponAttributes;
 
+import java.util.List;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
@@ -30,62 +34,238 @@ public final class DPItems {
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	238f, 2.5f, 5f))
-    );
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.anchor.description"));
+        }
+    };
     public static final Item ENCRUSTED_ANCHOR = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	238f, 2.5f, 5f))
-    ); // + Poison 1 for 5 seconds on hit
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.encrusted_anchor.description"));
+        }
+    };
     public static final Item FIREBRAND = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	150f, 1.0f, 1f))
-    ); // + Fire Ticks for 3 seconds on hit
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.firebrand.description"));
+        }
+    };
     public static final Item HIGHLAND_AXE = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(  160f, 1.15f, 1f))
-    ); // + Weakness 1 for 5 seconds on hit
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.highland_axe.description"));
+        }
+    };
     public static final Item BACKSTABBER = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	80f, 0.5f, 1f))
-    ); // + Extra Damage on mobs not targeting the user
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.backstabber.description"));
+        }
+    };
     public static final Item SWIFT_STRIKER = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	80f, 0.5f, 1f))
-    ); // + Extra Damage on mobs not targeting the user, built in Echo Enchantment (will do double damage with 5-I/4-II/3-III second cooldown)
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.swift_striker.description"));
+        }
+    };
     public static final Item BATTLESTAFF = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	70f, 0.3f, 0.5f))
-    ); // + attack speezy
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.battlestaff.description"));
+        }
+    };
     public static final Item BATTLESTAFF_OF_TERROR = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	70f, 0.3f, 0.5f))
-    ); // + fast and furious, small explosion on hit
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.battlestaff_of_terror.description"));
+        }
+    };
+    public static final Item BONECLUB = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(162f, 1.1f, 5f))
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.boneclub.description"));
+        }
+    };
+    public static final Item BONE_CUDGEL = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(162f, 1.1f, 5f))
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.bone_cudgel.description"));
+        }
+    };
+    public static final Item BROKEN_SAWBLADE = new SawbladeItem(
+        new Item.Properties()
+            .durability(250)
+            .attributes(scaledWeaponAttributes.create(120f, 0.625f, 0f)),
+        14
+    );
+    public static final Item MECHANIZED_SAWBLADE = new SawbladeItem(
+        new Item.Properties()
+            .durability(2031)
+            .attributes(scaledWeaponAttributes.create(160f, 0.625f, 0f)),
+        15
+    );
     public static final Item DAGGER = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
-    ); // + speezy 2
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.dagger.description"));
+        }
+    };
     public static final Item FANGS_OF_FROST = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
-    ); // + speezy 2, freezing 1 for 5 seconds on hit
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.fangs_of_frost.description"));
+        }
+    };
     public static final Item MOON_DAGGER = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
-    ); // + speezy 2, should be soul bonus damage, but not implemented yet. smite 1 instead for now
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.moon_dagger.description"));
+        }
+    };
     public static final Item SHEER_DAGGER = new Item(
         new Item.Properties()
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	25f, 0.2f, 0.5f))
-    ); // + speezy 2, sweeping edge on killing blow
+    ) {
+        @Override
+        public void appendHoverText(
+            ItemStack stack,
+            Item.TooltipContext context,
+            List<Component> tooltip,
+            TooltipFlag flag
+        ) {
+            super.appendHoverText(stack, context, tooltip, flag);
+            tooltip.add(Component.translatable("item.dungeonsport.sheer_dagger.description"));
+        }
+    };
     
     private DPItems() {
     }
@@ -126,6 +306,22 @@ public final class DPItems {
             registry.register(
                 ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff_of_terror"),
                 BATTLESTAFF_OF_TERROR);
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "boneclub"),
+                BONECLUB
+            );
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "bone_cudgel"),
+                BONE_CUDGEL
+            );
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "broken_sawblade"),
+                BROKEN_SAWBLADE
+            );
+            registry.register(
+                ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "mechanized_sawblade"),
+                MECHANIZED_SAWBLADE
+            );
             registry.register(
                 ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "dagger"),
                 DAGGER);
