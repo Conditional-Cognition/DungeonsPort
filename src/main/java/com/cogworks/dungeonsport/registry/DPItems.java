@@ -44,7 +44,7 @@ public final class DPItems {
     public static final Item HIGHLAND_AXE = new Item(
         new Item.Properties()
             .durability(1200)
-            .attributes(scaledWeaponAttributes.create(  160f, 1.5f, 1f))
+            .attributes(scaledWeaponAttributes.create(  160f, 1.15f, 1f))
     ); // + Weakness 1 for 5 seconds on hit
     public static final Item BACKSTABBER = new Item(
         new Item.Properties()
@@ -61,6 +61,11 @@ public final class DPItems {
             .durability(1200)
             .attributes(scaledWeaponAttributes.create(	70f, 0.3f, 0.5f))
     ); // + attack speezy
+    public static final Item BATTLESTAFF_OF_TERROR = new Item(
+        new Item.Properties()
+            .durability(1200)
+            .attributes(scaledWeaponAttributes.create(	70f, 0.3f, 0.5f))
+    ); // + fast and furious, small explosion on hit
     
     private DPItems() {
     }
@@ -98,6 +103,9 @@ public final class DPItems {
             registry.register(
                     ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff"),
                     BATTLESTAFF);
+            registry.register(
+                    ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "battlestaff_of_terror"),
+                    BATTLESTAFF_OF_TERROR);
         });
     }
 }

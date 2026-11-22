@@ -1,12 +1,18 @@
 {
     "itemGroup.dungeonsport": "Dungeons Port",
+    
     "item.dungeonsport.example_item": "Example Item",
     "item.dungeonsport.example_block_item": "Example Block Item",
+
     "item.dungeonsport.anchor": "Anchor",
     "item.dungeonsport.encrusted_anchor": "Encrusted Anchor",
     "item.dungeonsport.blacksmith_upgrade": "Blacksmith Upgrade Template",
     "item.dungeonsport.firebrand": "Firebrand",
     "item.dungeonsport.highland_axe": "Highland Axe",
     "item.dungeonsport.backstabber": "Backstabber",
-    "item.dungeonsport.swift_striker": "Swift Striker"
+    "item.dungeonsport.swift_striker": "Swift Striker",
+    "item.dungeonsport.battlestaff": "Battlestaff",
+    "item.dungeonsport.battlestaff_of_terror": "Battlestaff of Terror",
+
+    "enchantment.dungeonsport.echo": "Echo"
 }
