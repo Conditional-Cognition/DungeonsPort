@@ -2,6 +2,7 @@
   "description": {
     "translate": "enchantment.dungeonsport.freezing"
   },
+  "exclusive_set": "#dungeonsport:exclusive_set/elemental",
   "supported_items": "#minecraft:enchantable/weapon",
   "weight": 5,
   "max_level": 3,

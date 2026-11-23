@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "dungeonsport:anchor",
+    "dungeonsport:encrusted_anchor",
+    "dungeonsport:axe",
+    "dungeonsport:firebrand",
+    "dungeonsport:highland_axe",
+    "dungeonsport:backstabber",
+    "dungeonsport:swift_striker",
+    "dungeonsport:battlestaff",
+    "dungeonsport:battlestaff_of_terror",
+    "dungeonsport:boneclub",
+    "dungeonsport:bone_cudgel",
+    "dungeonsport:broken_sawblade",
+    "dungeonsport:mechanized_sawblade",
+    "dungeonsport:claymore",
+    "dungeonsport:broadsword",
+    "dungeonsport:frost_slayer",
+    "dungeonsport:great_axeblade",
+    "dungeonsport:heartstealer",
+    "dungeonsport:dagger",
+    "dungeonsport:fangs_of_frost",
+    "dungeonsport:moon_dagger",
+    "dungeonsport:sheer_dagger"
+  ]
+}

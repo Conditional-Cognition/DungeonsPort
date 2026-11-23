@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "dungeonsport:claymore",
     "dungeonsport:broken_sawblade",
     "dungeonsport:mechanized_sawblade"
   ]

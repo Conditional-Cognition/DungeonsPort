@@ -95,6 +95,10 @@ configurations {
 dependencies {
     // Modefite 1.0.1+1.21.1 (NeoForge)
     runtimeOnly "maven.modrinth:qjlkcVfy:cy8BkRZc"
+    // Combat Roll 2.0.6+1.21.1 (NeoForge)
+    implementation "maven.modrinth:wGKYL7st:FT7t1n1a"
+    // Item Obliterator 2.3.0+1.21.1 (NeoForge)
+    implementation "maven.modrinth:3ESR84kR:jy3ApWAm"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

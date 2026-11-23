@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "dungeonsport:sword"
+  },
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "result": {
+    "id": "dungeonsport:great_axeblade"
+  }
+}

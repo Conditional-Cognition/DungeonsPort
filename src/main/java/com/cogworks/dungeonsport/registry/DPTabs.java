@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 public final class DPTabs {
     public static final CreativeModeTab DUNGEONS_PORT_TAB = CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.dungeonsport"))
-            .icon(() -> new ItemStack(DPItems.EXAMPLE_ITEM))
+            .icon(() -> new ItemStack(DPItems.SWORD))
             .displayItems((parameters, output) -> {
                 output.accept(DPItems.EXAMPLE_BLOCK_ITEM);
                 output.accept(DPItems.EXAMPLE_ITEM);
@@ -29,6 +29,17 @@ public final class DPTabs {
                 output.accept(DPItems.BONE_CUDGEL);
                 output.accept(DPItems.BROKEN_SAWBLADE);
                 output.accept(DPItems.MECHANIZED_SAWBLADE);
+                output.accept(DPItems.CLAYMORE);
+                output.accept(DPItems.BROADSWORD);
+                output.accept(DPItems.FROST_SLAYER);
+                output.accept(DPItems.GREAT_AXEBLADE);
+                output.accept(DPItems.HEARTSTEALER);
+                output.accept(DPItems.CORAL_BLADE);
+                output.accept(DPItems.SPONGE_STRIKER);
+                output.accept(DPItems.CUTLASS);
+                output.accept(DPItems.DANCERS_SWORD);
+                output.accept(DPItems.NAMELESS_BLADE);
+                output.accept(DPItems.SPARKLER);
                 output.accept(DPItems.DAGGER);
                 output.accept(DPItems.FANGS_OF_FROST);
                 output.accept(DPItems.MOON_DAGGER);

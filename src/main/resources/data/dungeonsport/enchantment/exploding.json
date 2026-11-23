@@ -16,5 +16,6 @@
   "anvil_cost": 4,
   "slots": [
     "mainhand"
-  ]
+  ],
+  "exclusive_set": ["minecraft:sweeping_edge"]
 }

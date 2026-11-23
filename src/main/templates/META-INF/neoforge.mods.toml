@@ -40,7 +40,7 @@ Example mod description.
     side="BOTH"
 [[dependencies.${mod_id}]]
     modId="item_obliterator"
-    type="optional"
+    type="required"
     versionRange="[2.3.0,)"
     ordering="NONE"
     side="BOTH"
@@ -50,3 +50,9 @@ Example mod description.
     versionRange = "[1.0.1,)"
     ordering = "NONE"
     side = "CLIENT"
+[[dependencies.${mod_id}]]
+    modId = "combat_roll"
+    type = "required"
+    versionRange = "[2.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"

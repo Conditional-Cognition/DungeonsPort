@@ -16,5 +16,6 @@
     "mainhand"
   ],
   "supported_items": "#dungeonsport:soul_gear",
+  "primary_items": "#dungeonsport:soul_gear",
   "weight": 5
 }

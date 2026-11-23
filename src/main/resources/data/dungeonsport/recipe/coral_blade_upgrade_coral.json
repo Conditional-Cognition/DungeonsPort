@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "dungeonsport:blacksmith_upgrade"
+  },
+  "base": {
+    "item": "dungeonsport:coral_blade"
+  },
+  "addition": {
+    "item": "minecraft:bubble_coral"
+  },
+  "result": {
+    "id": "dungeonsport:sponge_striker"
+  }
+}

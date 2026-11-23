@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "dungeonsport:echo",
+    "dungeonsport:exploding",
+    "dungeonsport:freezing",
+    "dungeonsport:ambush",
+    "dungeonsport:poison_aspect",
+    "dungeonsport:illager_bane",
+    "dungeonsport:enigma_resonator",
+    "dungeonsport:dynamo",
+    "dungeonsport:leeching"
+  ]
+}

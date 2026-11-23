@@ -15,6 +15,7 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
+@SuppressWarnings("removal")
 @EventBusSubscriber(modid = DungeonsPort.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class SawbladeClientModelHandler {
 

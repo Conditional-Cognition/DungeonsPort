@@ -16,6 +16,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -75,6 +76,16 @@ public class enchantmentHandler {
         ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "enigma_resonator")
     );
 
+    public static final ResourceKey<Enchantment> DYNAMO_KEY = ResourceKey.create(
+        Registries.ENCHANTMENT,
+        ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "dynamo")
+    );
+
+    public static final ResourceKey<Enchantment> LEECHING_KEY = ResourceKey.create(
+        Registries.ENCHANTMENT,
+        ResourceLocation.fromNamespaceAndPath(DungeonsPort.MODID, "leeching")
+    );
+
     private static final Map<UUID, Long> LAST_ECHO_TICK = new HashMap<>();
     private static final Set<UUID> SWEEPING_ATTACKERS = new HashSet<>();
 
@@ -94,7 +105,6 @@ public class enchantmentHandler {
             innateLevel = 1;
         }
 
-        // Uses innate level if unenchanted, or the higher tier if enchanted with a stronger Echo level
         return Math.max(innateLevel, enchantedLevel);
     }
 
@@ -156,6 +166,26 @@ public class enchantmentHandler {
         float soulMultiplier = 1.0f + 0.5f * (Math.min(level, 5) - 1);
         return Math.min(1.0f, Math.max(0.0f, souls * soulMultiplier / maxSouls));
     }
+
+    public static int getEffectiveDynamoLevel(ItemStack weapon, Holder<Enchantment> dynamoHolder) {
+        int enchantedLevel = dynamoHolder != null ? weapon.getEnchantmentLevel(dynamoHolder) : 0;
+        int innateLevel = weapon.is(DPItems.GREAT_AXEBLADE) ? 1 : 0;
+        return Math.max(innateLevel, enchantedLevel);
+    }
+
+    public static int getEffectiveLeechingLevel(ItemStack weapon, Holder<Enchantment> leechingHolder) {
+        int enchantedLevel = leechingHolder != null ? weapon.getEnchantmentLevel(leechingHolder) : 0;
+        int innateLevel = weapon.is(DPItems.HEARTSTEALER) ? 1 : 0;
+        return Math.max(innateLevel, enchantedLevel);
+    }
+
+    public static float getLeechingPercentage(int level) {
+        if (level <= 0) {
+            return 0.0f;
+        }
+        return 0.08f + 0.05f * (level - 1);
+    }
+
 
     @SubscribeEvent
     public static void onLivingDamagePre(LivingDamageEvent.Pre event) {
@@ -234,6 +264,57 @@ public class enchantmentHandler {
                 event.setNewDamage(event.getNewDamage() + 2.5f);
             }
         }
+        
+        Holder<Enchantment> dynamoHolder = enchantments.getHolder(DYNAMO_KEY).orElse(null);
+        int dynamoLevel = getEffectiveDynamoLevel(weapon, dynamoHolder);
+        if (attacker instanceof Player player && dynamoLevel > 0) {
+            int dynamoCache = DPAttachments.getDynamoCache(player);
+            if (dynamoCache > 0) {
+                float bonusMultiplier = 1.0f + (0.15f * dynamoLevel * dynamoCache);
+                event.setNewDamage(event.getNewDamage() * bonusMultiplier);
+
+                if (player.level() instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(
+                        ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER,
+                        target.getX(),
+                        target.getY() + target.getBbHeight() * 0.5,
+                        target.getZ(),
+                        dynamoCache * 2,
+                        0.35,
+                        0.35,
+                        0.35,
+                        0.04
+                    );
+                }
+
+                DPAttachments.setDynamoCache(player, 0);
+            }
+        }
+        
+        // Sponge Striker: Release absorbed damage with Dynamo's particle effect
+        if (attacker instanceof Player player && weapon.is(DPItems.SPONGE_STRIKER)) {
+            float absorbedDamage = DPAttachments.getSpongeAbsorbedDamage(player);
+            if (absorbedDamage > 0.0f) {
+                event.setNewDamage(event.getNewDamage() + absorbedDamage);
+
+                if (player.level() instanceof ServerLevel serverLevel) {
+                    int particleCount = Math.max(4, Math.min(40, Math.round(absorbedDamage * 2)));
+                    serverLevel.sendParticles(
+                        ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER,
+                        target.getX(),
+                        target.getY() + target.getBbHeight() * 0.5,
+                        target.getZ(),
+                        particleCount,
+                        0.35,
+                        0.35,
+                        0.35,
+                        0.04
+                    );
+                }
+
+                DPAttachments.setSpongeAbsorbedDamage(player, 0.0f);
+            }
+        }
 
     }
 
@@ -289,7 +370,8 @@ public class enchantmentHandler {
         if (weapon.is(DPItems.HIGHLAND_AXE)) {
             target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
         }
-
+        
+        // Poison Aspect
         Holder<Enchantment> poisonAspectHolder = world
             .registryAccess()
             .registryOrThrow(Registries.ENCHANTMENT)
@@ -366,6 +448,7 @@ public class enchantmentHandler {
             }
         }
 
+        // Sheer Dagger Shearing
         if (weapon.is(DPItems.SHEER_DAGGER) && target.isDeadOrDying()) {
             float sweepDamage = Math.max(1.0f, event.getNewDamage() * 0.2f);
             SWEEPING_ATTACKERS.add(attacker.getUUID());
@@ -419,6 +502,31 @@ public class enchantmentHandler {
                         }
                     }
                 }
+            }
+        }
+        
+        Holder<Enchantment> leechingHolder = world
+            .registryAccess()
+            .registryOrThrow(Registries.ENCHANTMENT)
+            .getHolder(LEECHING_KEY)
+            .orElse(null);
+        int leechingLevel = getEffectiveLeechingLevel(weapon, leechingHolder);
+        if (target.isDeadOrDying() && leechingLevel > 0) {
+            float healAmount = Math.max(1.0f, target.getMaxHealth() * getLeechingPercentage(leechingLevel));
+            attacker.heal(healAmount);
+
+            if (world instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                    ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, 0xFFF82423),
+                    target.getX(),
+                    target.getY() + target.getBbHeight() * 0.5,
+                    target.getZ(),
+                    16,
+                    0.35,
+                    target.getBbHeight() * 0.3,
+                    0.35,
+                    0.0
+                );
             }
         }
     }
