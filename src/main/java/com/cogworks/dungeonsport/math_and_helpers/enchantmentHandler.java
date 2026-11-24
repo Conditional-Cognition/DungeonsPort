@@ -40,6 +40,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 @EventBusSubscriber(modid = DungeonsPort.MODID)
 public class enchantmentHandler {
+    
 
     public static final ResourceKey<Enchantment> ECHO_KEY = ResourceKey.create(
         Registries.ENCHANTMENT,
@@ -201,6 +202,11 @@ public class enchantmentHandler {
             return;
         }
 
+        if (attacker instanceof Player player && player.experienceLevel > 0 && !player.getMainHandItem().isEmpty()) {
+            float xpMultiplier = 1.0f + (0.25f * player.experienceLevel);
+            event.setNewDamage(event.getNewDamage() * xpMultiplier);
+        }
+
         var enchantments = attacker.level().registryAccess().registryOrThrow(Registries.ENCHANTMENT);
         Holder<Enchantment> echoHolder = enchantments.getHolder(ECHO_KEY).orElse(null);
         int echoLevel = getEffectiveEchoLevel(weapon, echoHolder);
@@ -290,7 +296,7 @@ public class enchantmentHandler {
                 DPAttachments.setDynamoCache(player, 0);
             }
         }
-        
+
         // Sponge Striker: Release absorbed damage with Dynamo's particle effect
         if (attacker instanceof Player player && weapon.is(DPItems.SPONGE_STRIKER)) {
             float absorbedDamage = DPAttachments.getSpongeAbsorbedDamage(player);

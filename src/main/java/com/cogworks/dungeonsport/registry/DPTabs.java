@@ -14,11 +14,10 @@ public final class DPTabs {
             .title(Component.translatable("itemGroup.dungeonsport"))
             .icon(() -> new ItemStack(DPItems.SWORD))
             .displayItems((parameters, output) -> {
-                output.accept(DPItems.EXAMPLE_BLOCK_ITEM);
-                output.accept(DPItems.EXAMPLE_ITEM);
+                output.accept(DPItems.BLACKSMITH_UPGRADE);
                 output.accept(DPItems.ANCHOR);
                 output.accept(DPItems.ENCRUSTED_ANCHOR);
-                output.accept(DPItems.BLACKSMITH_UPGRADE);
+                output.accept(DPItems.AXE);
                 output.accept(DPItems.FIREBRAND);
                 output.accept(DPItems.HIGHLAND_AXE);
                 output.accept(DPItems.BACKSTABBER);
@@ -44,6 +43,9 @@ public final class DPTabs {
                 output.accept(DPItems.FANGS_OF_FROST);
                 output.accept(DPItems.MOON_DAGGER);
                 output.accept(DPItems.SHEER_DAGGER);
+
+                output.accept(DPItems.SWORD);
+                output.accept(DPItems.DIAMOND_SWORD);
             })
             .build();
 
